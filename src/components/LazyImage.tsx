@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, CSSProperties } from "react";
 import { ImageOff } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 
@@ -8,9 +8,16 @@ interface LazyImageProps {
   alt: string;
   className?: string;
   fallbackClassName?: string;
+  style?: CSSProperties;
 }
 
-export function LazyImage({ src, alt, className = "", fallbackClassName = "" }: LazyImageProps) {
+export function LazyImage({ 
+  src, 
+  alt, 
+  className = "", 
+  fallbackClassName = "",
+  style
+}: LazyImageProps) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [error, setError] = useState(false);
   
@@ -37,6 +44,7 @@ export function LazyImage({ src, alt, className = "", fallbackClassName = "" }: 
           src={src}
           alt={alt}
           loading="lazy"
+          style={style}
           className={`w-full h-full transition-opacity duration-300 ${isLoaded ? 'opacity-100' : 'opacity-0'} ${className}`}
           onLoad={() => setIsLoaded(true)}
           onError={() => setError(true)}
