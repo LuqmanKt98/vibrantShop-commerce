@@ -1,5 +1,4 @@
-
-import { Facebook, Instagram, Twitter, YouTube, Mail } from "lucide-react";
+import { Facebook, Instagram, Twitter, Youtube, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export function Footer() {
@@ -27,7 +26,7 @@ export function Footer() {
                 <span className="sr-only">Twitter</span>
               </a>
               <a href="#" className="text-muted-foreground hover:text-shop-blue transition-colors">
-                <YouTube className="h-5 w-5" />
+                <Youtube className="h-5 w-5" />
                 <span className="sr-only">YouTube</span>
               </a>
             </div>
